@@ -1,0 +1,4 @@
+[submodule Reasoning-from-scratch]
+	path = Reasoning-from-scratch
+	url = https://github.com/rasbt/reasoning-from-scratch.git
+	branch = main
