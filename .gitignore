@@ -6,7 +6,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+qwen3/
 # Distribution / packaging
 .Python
 build/
