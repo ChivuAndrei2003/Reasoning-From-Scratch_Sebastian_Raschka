@@ -1,0 +1,9 @@
+- Reasoning abilities and answer accuracy can be improved without retraining the model by increasing compute at inference time (inference-time scaling).
+- A flexible text generation wrapper (generate_text_stream_concat_flex) allows different sampling strategies to be plugged in without changing the surrounding code.
+- Next tokens are produced from logits via softmax.
+- Temperature scaling changes logits to control the diversity of the generated text.
+- Top-p (nucleus) sampling filters out low-probability tokens to reduce the chance of generating nonsensical answers.
+- Chain-of-thought prompting (such as “Explain step by step.”) often yields more accurate answers by encouraging the model to write out its intermediate reasoning, though it increases the number of generated tokens and, in turn, the runtime cost.
+- Self-consistency sampling generates multiple answers, extracts the final boxed result from each, and selects the most frequent answer via majority vote to improve answer accuracy.
+- Experiments on the MATH-500 dataset show that combining chain-of-thought prompting with self-consistency can substantially boost accuracy compared to the baseline without sampling, at the cost of much longer running times.
+- The central tradeoff of inference-time scaling is higher accuracy in exchange for more compute.
