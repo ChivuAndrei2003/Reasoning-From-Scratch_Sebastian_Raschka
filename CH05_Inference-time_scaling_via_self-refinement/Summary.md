@@ -1,0 +1,7 @@
+- Self-refinement extends the inference-time scaling ideas from the previous chapter by iteratively critiquing and improving a single answer, rather than relying on multiple independent samples as in self-consistency.
+- A simple rule-based scoring function ranks model outputs by rewarding extractable final answers and shorter, more economical completions.
+- Next-token scoring quantifies model confidence by converting logits into normalized probabilities and combining these into a sequence-level likelihood.
+- Log probabilities replace raw probabilities to avoid numerical underflow and to turn products over many tokens into stable sums and averages.
+- These scoring functions are useful beyond self-refinement, such as for breaking ties in self-consistency or implementing best-of-N selection strategies.
+- The self-refinement procedure consists of three stages: generating an initial draft, producing a short critique and fix plan, and generating a revised answer.
+- A reusable refinement function automates the self-refinement workflow across multiple iterations (refinement rounds), and it can use score-based acceptance to keep only revisions that do not degrade the computed answer’s score using one of the scoring functions we developed earlier.
